@@ -21,6 +21,7 @@ from itsdangerous import URLSafeTimedSerializer
 
 app = Flask(__name__)
 
+
 # Load configuration from config.json
 with open('config.json') as f:
     params = json.load(f)['param']
@@ -49,6 +50,7 @@ class ObjectIdEncoder(json.JSONEncoder):
 
 # use the custom encoder when serializing to JSON
 app.json_encoder = ObjectIdEncoder
+
 
 # @login_manager.user_loader
 # def load_user(user_id):
